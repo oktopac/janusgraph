@@ -10,4 +10,8 @@ WORKDIR /janusgraph-${JANUSVERSION}-hadoop2
 
 ADD wait_for_gremlin.sh .
 
+ADD gremlin-server.yml /janusgraph-0.1.1-hadoop2/conf/gremlin-server/gremlin-server.yml
+
+EXPOSE 8182
+
 CMD bin/janusgraph.sh start && sh wait_for_gremlin.sh
